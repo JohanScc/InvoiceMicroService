@@ -1,0 +1,9 @@
+package aforo255.ms.test.dao;
+
+import org.springframework.data.repository.CrudRepository;
+
+import aforo255.ms.test.domain.Operation;
+
+public class InvoiceDao implements CrudRepository<Operation, Integer> {
+
+}

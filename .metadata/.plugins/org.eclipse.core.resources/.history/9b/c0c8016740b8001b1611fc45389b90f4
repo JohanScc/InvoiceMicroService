@@ -1,0 +1,5 @@
+package aforo255.ms.test.domain;
+
+public class Invoice {
+
+}

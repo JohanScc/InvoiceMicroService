@@ -1,0 +1,38 @@
+package aforo255.ms.test.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import java.util.Date;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+@Entity
+@Table(name="OPERATION")
+public class Operation implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_OPERATION")
+	private Integer id_operation; 
+	@Column(name="ID_INVOICE")
+	private Integer id_invoice;
+	@Column(name="AMOUNT")
+	private double amount;
+	@Column(name="DATE")
+	private Date Date;
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id_customer" , insertable =false , updatable = false)
+	@Fetch(FetchMode.JOIN)
+	private Customer customer;
+	
+	
+}

@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+D:\CursosAforo255\Microservicios\FinalWorkMicroservices\.metadata\.plugins\org.eclipse.jdt.core
+546789099.index
+3986005959.index
+2607690082.index
+3213414178.index
+633215209.index
+203492106.index
+685091261.index
+2551050552.index
+1224832838.index

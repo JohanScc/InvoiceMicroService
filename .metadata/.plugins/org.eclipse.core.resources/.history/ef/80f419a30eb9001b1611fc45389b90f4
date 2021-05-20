@@ -1,0 +1,40 @@
+package aforo255.ms.test.service;
+
+import org.springframework.stereotype.Service;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import aforo255.ms.test.domain.Invoice;
+import aforo255.ms.test.transversal.Constants;
+
+@Service
+public class InvoiceEvents {
+	@Autowired
+	private IInvoiceService invoiceService ; 
+	private Logger log = LoggerFactory.getLogger(InvoiceEvents.class);
+	@Autowired
+	private ObjectMapper objectMapper ; 
+	
+	public void processTransactionEvent(ConsumerRecord<Integer, String> consumerRecord) throws JsonMappingException, JsonProcessingException {
+		Invoice account = new Invoice();
+		Invoice event = objectMapper.readValue(consumerRecord.value(), Invoice.class);
+		account = invoiceService.findById(event.getIdInvoice());
+		
+		account.setAmount(event.getAmount());
+		if(account.getAmount() == event.getAmount()) {
+			account.setState(Constants.Invoice_Payed);
+		}
+		else {
+			account.setState(Constants.Invoice_Incompleted);
+		}
+		log.info("Actulizando N° Factura ***"+event.getIdInvoice());
+		invoiceService.save(account);
+	}
+	
+}

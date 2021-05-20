@@ -1,0 +1,8 @@
+package aforo255.ms.test.config;
+
+public class Snippet {
+	public static void main(String[] args) {
+		aforo255.ms.test
+	}
+}
+

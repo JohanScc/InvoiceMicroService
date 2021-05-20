@@ -1,0 +1,17 @@
+package aforo255.ms.test.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import aforo255.ms.test.domain.Invoice;
+
+public class PayServiceImpl implements IPayService {
+
+	@Autowired
+	
+	@Override
+	public Invoice save(Invoice invoice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

@@ -1,0 +1,8 @@
+package aforo255.ms.test.service;
+
+import aforo255.ms.test.domain.Invoice;
+
+public interface IPayService {
+	public Invoice save (Invoice invoice);
+	
+}

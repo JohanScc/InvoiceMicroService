@@ -1,0 +1,63 @@
+package aforo255.ms.test.domain;
+
+import java.io.Serializable;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="INVOICE")
+public class PayInvoice  implements Serializable{
+
+	
+	private static final long serialVersionUID = 1L;	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_OPERATION")
+	private Integer id_operation ;
+	@Column(name="ID_INVOICE")
+	private Integer idInvoice ;
+	@Column(name="AMOUNT")
+	private double amount ;
+	@Column(name="DATE")
+	private Date date;
+	public Integer getId_operation() {
+		return id_operation;
+	}
+	public void setId_operation(Integer id_operation) {
+		this.id_operation = id_operation;
+	}
+	public Integer getIdInvoice() {
+		return idInvoice;
+	}
+	public void setIdInvoice(Integer idInvoice) {
+		this.idInvoice = idInvoice;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

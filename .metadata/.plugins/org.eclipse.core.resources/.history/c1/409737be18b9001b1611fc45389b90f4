@@ -1,0 +1,2 @@
+spring.application.name=ms-deposit
+server.port=6003

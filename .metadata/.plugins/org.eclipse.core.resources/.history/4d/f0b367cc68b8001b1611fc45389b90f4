@@ -1,0 +1,27 @@
+package aforo255.ms.test.service;
+
+import java.util.List;
+
+import aforo255.ms.test.domain.Operation;
+
+public class InvoiceServiceImpl implements IInvoiceService {
+
+	@Override
+	public List<Operation> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Operation findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Operation save(Operation operation) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

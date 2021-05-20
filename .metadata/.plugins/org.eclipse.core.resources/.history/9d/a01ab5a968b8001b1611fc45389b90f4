@@ -1,0 +1,5 @@
+package aforo255.ms.test.dao;
+
+public interface IInvoiceDao {
+
+}

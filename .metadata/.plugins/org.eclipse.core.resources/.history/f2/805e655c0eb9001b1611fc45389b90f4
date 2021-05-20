@@ -1,0 +1,6 @@
+package aforo255.ms.test.transversal;
+
+public class Constants {
+	public final static String Invoice_Payed = "1";
+	public final static String Invoice_Incompleted = "2";
+}
