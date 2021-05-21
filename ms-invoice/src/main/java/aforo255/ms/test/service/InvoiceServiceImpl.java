@@ -3,10 +3,11 @@ package aforo255.ms.test.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import aforo255.ms.test.dao.IInvoiceDao;
 import aforo255.ms.test.domain.Invoice;
-
+@Service
 public class InvoiceServiceImpl implements IInvoiceService {
 
 	@Autowired
