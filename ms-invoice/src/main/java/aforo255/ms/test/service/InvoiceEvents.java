@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import aforo255.ms.test.domain.Invoice;
 import aforo255.ms.test.domain.PayInvoice;
+import aforo255.ms.test.domain.State;
 import aforo255.ms.test.transversal.Constants;
 
 @Service
@@ -24,15 +25,18 @@ public class InvoiceEvents {
 	
 	public void processInvoiceEvent(ConsumerRecord<Integer, String> consumerRecord) throws JsonMappingException, JsonProcessingException {
 		Invoice invoice = new Invoice();
+		State state = new State();
 		PayInvoice event = objectMapper.readValue(consumerRecord.value(), PayInvoice.class);
 		invoice = invoiceService.findById(event.getIdInvoice());
 		
 		invoice.setAmount(event.getAmount());
 		if(invoice.getAmount() == event.getAmount()) {
-			invoice.setState(Constants.Invoice_Payed);
+			state.setIdState(Constants.Invoice_Payed);
+			invoice.setState(state);
 		}
 		else {
-			invoice.setState(Constants.Invoice_Incompleted);
+			state.setIdState(Constants.Invoice_Incompleted);
+			invoice.setState(state);
 		}
 		log.info("Actulizando N° Factura ***"+event.getIdInvoice());
 		invoiceService.save(invoice);

@@ -11,15 +11,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Transaction {
 
 	@BsonId
-	private String id_transaction ; 
+	private String id ; 
 	private Integer id_invoice ;
 	private double amount ;
 	private Date date;
 	public String getId_transaction() {
-		return id_transaction;
+		return id;
 	}
 	public void setId_transaction(String id_transaction) {
-		this.id_transaction = id_transaction;
+		this.id = id_transaction;
 	}
 	public Integer getId_invoice() {
 		return id_invoice;

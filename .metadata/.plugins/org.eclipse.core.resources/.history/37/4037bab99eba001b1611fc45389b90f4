@@ -1,0 +1,3 @@
+spring.application.name=ms-pay
+server.port=6001
+

@@ -25,8 +25,11 @@ public class Invoice  implements Serializable{
 	private Integer idInvoice ;
 	@Column(name="amount")
 	private double amount ;
-	@Column(name="state")
-	private int state ;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="id_state" , insertable =false , updatable = false)
+	@Fetch(FetchMode.JOIN)
+	private State state ;
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="id_customer" , insertable =false , updatable = false)
@@ -35,6 +38,14 @@ public class Invoice  implements Serializable{
 
 
 	
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
 	public Integer getIdInvoice() {
 		return idInvoice;
 	}
@@ -49,14 +60,6 @@ public class Invoice  implements Serializable{
 
 	public void setAmount(double amount) {
 		this.amount = amount;
-	}
-
-	public int getState() {
-		return state;
-	}
-
-	public void setState(int state) {
-		this.state = state;
 	}
 
 	public Customer getCustomer() {
