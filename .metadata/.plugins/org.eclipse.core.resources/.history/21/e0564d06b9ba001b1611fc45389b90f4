@@ -1,10 +1,10 @@
-spring.application.name=ms-transaction
-server.port=6003
+spring.application.name=ms-pay
+server.port=6001
 
 #Configuracion a Config Server
-spring.config.import=configserver:http://app-configserver:6005
+spring.config.import=configserver:http://localhost:6005
 spring.profiles.active=dev
-spring.cloud.config.uri=http://app-configserver:6005
+spring.cloud.config.uri=http://localhost:6005
 
 #Configuracion a Config Server localhost
 #spring.config.import=configserver:http://localhost:6005
