@@ -27,12 +27,12 @@ public class Invoice  implements Serializable{
 	private double amount ;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_state" , insertable =false , updatable = true)
+	@JoinColumn(name="id_state" , insertable =false , updatable = false)
 	@Fetch(FetchMode.JOIN)
 	private State state ;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_customer" , insertable =false , updatable = false)
+	@OneToOne(fetch = FetchType.)
+	@JoinColumn(name="id_customer" , insertable =false , updatable = true)
 	@Fetch(FetchMode.JOIN)
 	private Customer customer;
 

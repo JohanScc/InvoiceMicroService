@@ -27,7 +27,7 @@ public class Invoice  implements Serializable{
 	private double amount ;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="id_state" , insertable =false , updatable = true)
+	@JoinColumn(name="id_state" , insertable =false , updatable = false)
 	@Fetch(FetchMode.JOIN)
 	private State state ;
 	
