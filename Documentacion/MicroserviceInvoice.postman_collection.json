@@ -1,0 +1,44 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MicroserviceInvoice",
+		"_postman_id": "70aff5eb-5285-665f-ff8d-6ade454faf88",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pay invoice",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get invoices",
+			"request": {
+				"url": "http://localhost:6002/listar",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get transaction",
+			"request": {
+				"url": "",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -29,7 +29,7 @@ public class InvoiceEvents {
 		PayInvoice event = objectMapper.readValue(consumerRecord.value(), PayInvoice.class);
 		invoice = invoiceService.findById(event.getIdInvoice());
 		
-		invoice.setAmount(event.getAmount());
+		
 		if(invoice.getAmount() == event.getAmount()) {
 			state.setIdState(Constants.Invoice_Payed);
 			invoice.setState(state);
