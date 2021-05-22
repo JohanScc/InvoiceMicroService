@@ -38,7 +38,7 @@ public class InvoiceEvents {
 			state.setIdState(Constants.Invoice_Incompleted);
 			invoice.setState(state);
 		}
-		log.info("Actulizando N° Factura *** " +event.getIdInvoice());
+		log.info("Actulizando N° Factura ***"+event.getIdInvoice());
 		invoiceService.save(invoice);
 	}
 	
